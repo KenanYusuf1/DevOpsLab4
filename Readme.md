@@ -33,3 +33,26 @@ This report outlines the steps undertaken to install and configure Grafana on an
 
 ## Conclusion
 The installation and initial configuration of Grafana on an Azure-hosted Ubuntu VM were successfully completed, with Grafana accessible via the VM's public IP address. However, the project objectives were partially met due to limitations encountered with Azure App Registrations. The resolution of this access issue is crucial for the complete integration of Grafana with Azure data sources, enabling comprehensive monitoring and visualization capabilities within the Azure environment.
+
+# Conclusion 2
+
+## Initial Challenges and Switching Subscriptions
+
+...successfully overcame the initial hurdles. After encountering persistent issues with the client secret and permissions within my primary Azure subscription, which hindered the Grafana integration with Azure services, I decided to switch to a different Azure subscription. This move proved to be pivotal.
+
+## Creating New App Registrations
+
+Upon switching, I promptly initiated the process of creating new App Registrations within Azure Active Directory. The experience gained from previous attempts enabled a smoother and more informed setup. With the new App Registration in place, I generated a fresh client secret, carefully ensuring its correct implementation within the Grafana configuration.
+
+## Assigning Roles to Service Principal
+
+The next crucial step was to assign the necessary role to the `grafana-azure` service principal. This involved granting it the "Reader" role at the subscription level, thereby ensuring it had sufficient permissions to retrieve data from Azure Monitor, Log Analytics, and the Resource Graph. This role assignment was a key element that facilitated the successful integration between Grafana and Azure services.
+
+## Grafana Dashboard Configuration
+
+Finally, with all configurations correctly in place and permissions adequately assigned, I ventured into Grafana to begin the creation of dashboards. To my satisfaction, I was able to connect to the Azure data sources without any of the previous authentication issues. The graphs began to populate, reflecting the Azure resources and metrics I intended to monitor. This not only marked the resolution of the challenges faced but also the beginning of a comprehensive monitoring setup that leveraged Grafana's powerful visualization capabilities.
+
+## Reflecting on the Journey
+
+In conclusion, the shift to a different Azure subscription and the subsequent steps taken to rectify the initial obstacles underscored the importance of proper access permissions and the correct configuration of service principals in Azure. This experience highlighted the intricate relationship between cloud resources and third-party tools and the need for a thorough understanding of their integration mechanisms. It was a reminder of the resilience required in the face of technical challenges and the satisfaction of achieving a fully functional monitoring solution that leverages the best of Azure and Grafana's capabilities.
+
